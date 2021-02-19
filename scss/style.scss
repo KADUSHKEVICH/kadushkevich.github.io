@@ -1,0 +1,610 @@
+@import 'fonts';
+@import 'reset';
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    background-color: #283593;
+    overflow: hidden;
+    position: relative;
+
+    &__header{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        padding-top: 75px;
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 20;
+    }
+
+    &__test{
+        &-text{
+            font-family: OsnovaPro-bold;
+            font-size: 30px;
+            line-height: 35px;
+            letter-spacing: 15px;
+            text-transform: uppercase;
+            color: #b7c0ff;
+            position: relative;
+        }
+
+        &-text::after{
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            background-color: #283593;
+            animation-name: showTest;
+            animation-duration: 1s;
+            z-index: 5;
+        }
+
+        @keyframes showTest {
+            0%{
+                width: 100%;
+            }
+            100%{
+                width: 0%;
+            }
+        }
+    }
+
+    &__menu{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        max-width: 550px;
+        width: 100%;
+        position: relative;
+
+        &::after{
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            background-color: #283593;
+            animation-name: showMenuOneByOne;
+            animation-duration: 2s;
+            opacity: 1;
+        }
+
+        @keyframes showMenuOneByOne {
+            0%{
+                width: 100%;
+                opacity: 1;
+            }
+            100%{
+                width: 0%;
+                opacity: 0;
+            }
+        }
+
+        &-item{
+            font-family: OsnovaPro-bold;
+            font-size: 18px;
+            line-height: 20px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #b7c0ff;
+        }
+
+        .item-1{
+            animation-name: showMenu;
+            animation-duration: 1s;
+        }
+        .item-2{
+            animation-name: showMenu;
+            animation-duration: 2s;
+        }
+        .item-3{
+            animation-name: showMenu;
+            animation-duration: 2.5s;
+        }
+        .item-4{
+            animation-name: showMenu;
+            animation-duration: 3s;
+        }
+
+        @keyframes showMenu {
+            0%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+    }
+
+    &__main{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        position: relative;
+
+        &-content{
+            margin-left: 180px;
+            text-align: center;
+            z-index: 20;
+        }
+
+        &-title{
+            font-family: Gilroy-semibold;
+            font-size: 105px;
+            line-height: 115px;
+            color: #fff;
+            margin-bottom: 80px;
+            position: relative;
+            z-index: 10;
+        }
+
+        &-title::after{
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            background-color: #283593;
+            animation-name: showTitle;
+            animation-duration: 1s;
+            z-index: 5;
+        }
+
+        @keyframes showTitle {
+            0%{
+                width: 100%;
+            }            
+            100%{
+                width: 0%;
+            }
+        }
+
+        &-button-wrapper{
+            width: 355px;
+            height: 92px;
+        }
+
+        &-button{
+            font-family: OsnovaPro-bold;
+            font-size: 18px;
+            line-height: 20px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #fff;
+            padding: 35px 125px;
+            background-color: transparent;
+            border: 1px solid #fff;
+            animation-name: showBtn;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes showBtn {
+            0% {
+                font-size: 0px;
+                padding: 0;
+                border: 1px solid rgba(0, 0, 0, 0);
+            }
+            100%{
+                font-size: 18px;
+                padding: 35px 125px;
+                border: 1px solid #fff;
+            }
+        }
+    }
+
+    &__brain{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto auto;
+        transform: translate(55px, -50px);
+        animation-name: showBrain;
+        animation-delay: 1s;
+        animation-duration: 1.5s;
+        animation-fill-mode: forwards;
+        opacity: 0;
+        z-index: 11;
+    }
+
+    &__brain-img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto auto;
+        animation-name: ass;
+        animation-delay: 6s;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes ass{
+        0%{
+            width: 700px;
+            height: 700px;
+            opacity: 1;
+        }
+        100%{
+            width: 0;
+            height: 0;
+            opacity: 0;
+        }
+    }
+    @keyframes showBrain {
+        0%{
+            width: 0;
+            height: 0;
+            opacity: 0;
+        }
+        100%{
+            width: 700px;
+            height: 700px;
+            opacity: 1;
+        }
+    }
+    
+    .st1{
+        animation-name: rotateGear;
+        animation-delay: 1s;
+        animation-fill-mode: forwards;
+        animation-duration: 6s;
+        transform-origin: 45.52% 40.225%;
+    }
+    
+    .st2{
+        animation-name: rotateGear;
+        animation-delay: 1s;
+        animation-fill-mode: forwards;
+        animation-duration: 6s;
+        transform-origin: 15.37% 87.95%;
+    }
+
+    @keyframes rotateGear {
+        0%{
+            transform: rotate(0deg);
+        }
+        50%{
+            transform: rotate(360deg);
+        }
+        100%{
+            transform: rotate(0deg);
+        }
+    }
+
+    &__ellipse{
+        position: absolute;
+        top: 10;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        border-radius: 50%;
+        background-color: rgb(19, 26, 87);
+        animation-name: showEllipse;
+        animation-delay: 1s;
+        animation-duration: 1.5s;
+        animation-fill-mode: forwards;
+        z-index: 10;
+    }
+
+    &__ellipse-inner{
+        position: absolute;
+        top: 10;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        border-radius: 50%;
+        background-color: rgb(19, 26, 87);
+        animation-name: hiddenEllipse;
+        animation-delay: 6s;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        z-index: 10;
+    }
+
+    @keyframes showEllipse {
+        0%{
+            width: 0;
+            height: 0;
+        }
+        100%{
+            width: 950px;
+            height: 950px;
+        }
+    }
+
+    @keyframes hiddenEllipse {
+        0%{
+            width: 0;
+            height: 0;
+        }
+        100%{
+            width: 5000px;
+            height: 5000px;
+            left: -200px;
+        }
+    }
+
+    &__ellipse-double{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        border-radius: 50%;
+        background-color: rgba(19, 26, 87, 0.431);
+        margin: auto auto;
+        animation-name: showEllipseDouble;
+        animation-delay: 1.2s;
+        animation-duration: 1.1s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-out;
+        z-index: 10;
+    }
+
+    @keyframes showEllipseDouble {
+        0%{
+            width: 0;
+            height: 0;
+            bottom: 0;
+        }
+        100%{
+            width: 1300px;
+            height: 1300px;
+            bottom: 0;
+        }
+    }
+
+    &__video-bg{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 55vw;
+        height: 100vh;
+        animation-name: showVideoBg;
+        animation-delay: 2s;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+        opacity: 0;
+        overflow: hidden;
+    }
+
+    @keyframes showVideoBg {
+        0%{
+            right: -100%;
+        }
+        100%{
+            right: 0;
+            opacity: 1;
+        }
+    }
+
+    &__halfellipse-left-s{
+        position: fixed;
+        top: 50%;
+        left: -20%;
+        transform: translateY(-50%);
+        width: 800px;
+        height: 800px;
+        border-radius: 50%;
+        animation-name: showHalfEllipseS;
+        animation-delay: 6s;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        overflow: hidden;
+        opacity: 0;
+        z-index: 12;
+    }
+
+    @keyframes showHalfEllipseS {
+        0%{
+            left: -100%;
+        }
+        100%{
+            left: -20%;
+            background-color: rgb(0, 85, 0);
+            opacity: 1;
+        }
+    }
+
+    &__halfellipse-left-m{
+        position: fixed;
+        top: 50%;
+        left: -30%;
+        transform: translateY(-50%);
+        width: 1250px;
+        height: 1250px;
+        border-radius: 50%;
+        animation-name: showHalfEllipseM;
+        animation-delay: 6s;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        z-index: 11;
+    }
+
+    @keyframes showHalfEllipseM {
+        0%{
+            left: -100%;
+        }
+        100%{
+            left: -30%;
+            background-color: #212c7e;
+        }
+    }
+
+    &__halfellipse-left-l{
+        position: fixed;
+        top: 50%;
+        left: -25%;
+        transform: translateY(-50%);
+        width: 1400px;
+        height: 1400px;
+        border-radius: 50%;
+        animation-name: showHalfEllipseL;
+        animation-delay: 6s;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        z-index: 10;
+    }
+    
+    @keyframes showHalfEllipseL {
+        0%{
+            left: -100%;
+        }
+        100%{
+            left: -25%;
+            background-color: rgb(25, 33, 109);
+        }
+    }
+
+    &__subtitle{
+        position: absolute;
+        bottom: 0;
+        right: 20%;
+        width: 500px;
+        height: 700px;
+        z-index: 15;
+
+        &-title{
+            font-family: Gilroy-medium;
+            font-size: 58px;
+            line-height: 60px;
+            margin-bottom: 60px;
+            color: #b7c0ff;
+            transform-origin: -500px 50%;
+            animation-name: rotateSubtitle;
+            animation-delay: 6.5s;
+            animation-duration: 1.5s;
+            animation-fill-mode: forwards;
+            opacity: 0;
+        }
+
+        &-text{
+            font-family: Gilroy-regular;
+            font-size: 18px;
+            line-height: 20px;
+            margin-bottom: 60px;
+            color: #b7c0ff;
+            transform-origin: -500px 50%;
+            animation-name: rotateSubtitle;
+            animation-delay: 6.7s;
+            animation-duration: 1.5s;
+            animation-fill-mode: forwards;
+            opacity: 0;
+        }
+
+        &-button{
+            transform-origin: -500px 50%;
+            animation-name: rotateSubtitle;
+            animation-delay: 6.9s;
+            animation-duration: 1.5s;
+            animation-fill-mode: forwards;
+            opacity: 0;
+        }
+    }
+
+    @keyframes rotateSubtitle {
+        0%{
+            transform: rotate(90deg);
+            opacity: 0;
+        }
+        100%{
+            transform: rotate(0deg);
+            opacity: 1;
+        }
+    }
+}
+
+@media (max-width: 1600px) {
+    .container {
+        &__main{
+
+            &-content{
+                margin-left: 130px;
+            }
+    
+            &-title{
+                font-family: Gilroy-semibold;
+                font-size: 95px;
+                line-height: 100px;
+            }
+        }
+
+        &__brain{
+            width: 550px;
+            height: 550px;
+        }
+    
+        @keyframes showEllipse {
+            0%{
+                width: 0;
+                height: 0;
+            }
+            100%{
+                width: 800px;
+                height: 800px;
+            }
+        }
+
+        @keyframes showEllipseDouble {
+            0%{
+                width: 0;
+                height: 0;
+                bottom: 0;
+            }
+            100%{
+                width: 1150px;
+                height: 1150px;
+                bottom: 0;
+            }
+        }
+
+        &__halfellipse-left-s{
+            width: 700px;
+            height: 700px;
+        }
+    
+        &__halfellipse-left-m{
+            width: 1150px;
+            height: 1150px;
+        }
+    
+        &__halfellipse-left-l{
+            width: 1300px;
+            height: 1300px;
+
+        }
+
+        &__subtitle{
+
+            &-title{
+                font-size: 56px;
+                line-height: 58px;
+                margin-bottom: 40px;
+            }
+
+            &-text{
+                font-size: 16px;
+                line-height: 18px;
+                margin-bottom: 40px;
+            }
+        }
+    }
+}
+
+@media (max-height: 950px) {
+    .container{
+        &__subtitle{
+            height: 600px;
+        }
+    }
+}
