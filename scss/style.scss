@@ -608,3 +608,11 @@
         }
     }
 }
+
+@media (max-height: 800px) {
+    .container{
+        &__subtitle{
+            height: 500px;
+        }
+    }
+}
